@@ -1,0 +1,153 @@
+body {
+    /*como estou pegando uma tag inteira coloco apenas o nome  */
+    font-family: 'Poppins';
+}
+
+.cabecalho {
+    /* usamos o "." para selecionar a classe. */
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    max-width: 1440;
+    margin: 0 auto;
+    /* forma para centralizar, 0 em cima e em baixo e laterais dividindo automatico em 2 */
+
+}
+
+.cabecalho .logo {
+    width: 65px;
+}
+
+.cabecalho .menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.cabecalho nav li a {
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: 0.2s;
+}
+
+.cabecalho nav li a:hover {
+    background-color: #d5011d;
+
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    /* colocando os elementos lado a lado */
+    align-items: center;
+    height: calc(100vh - 132px);
+    /* função calc serve para calcular onde quero o item, nesse caso pegando 100 da visão do usuario menos os 132px de altura do menu. view height significa altura de visualização do usuário, sempre que ele mudar o zoom da tela a imagem se ajustará */
+    padding: 0 30px 30px;
+}
+
+.container .imagem-titulo {
+    max-width: 500px;
+}
+
+.container .descricao {
+    color: #a8abb7;
+    width: 85%;
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+.container .botao-trailer {
+    background-color: #ff0021;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.5s all ease-in-out;
+}
+
+.container .botao-trailer:hover {
+    transform: scale(1.1);
+
+}
+
+.fundo-video {
+    position: absolute;
+    z-index: -1;
+    /* coloca o item atras dos demais no eixo z */
+    width: 100vw;
+    /* view width */
+    height: 100vh;
+    /* view height */
+    overflow: hidden;
+    /* overflow significa transbordar, hidden esconder. usamos pois havia criado uma rolagem na página */
+    display: flex;
+    justify-content: center;
+}
+
+.fundo-video .video {
+    height: 100vh;
+}
+
+.fundo-video::after {
+    content: "";
+    background-color: #d5011d;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 1) 100%);
+    /* codigo criado no site "cssgradient.io"  */
+}
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(52, 52, 50, 0.749);
+    /* estamos usando rgba pois queremos ter opacidade */
+    visibility: hidden;
+}
+.conteudo-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* coluna para que fique um em cima do outro, wire para que fique um do lado do outro */
+    height: 100vh;
+    border-radius: 5px;
+    /* borda arredondada */
+    gap: 15px;
+    /* vão entre items */ 
+}
+
+.fechar-modal {
+    background-color: #ffffff;
+    color: #f03a17;
+    font-weight: bold;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    }
+
+.modal iframe {
+    border-width: 0;
+    width: 640px;
+    height:360px;
+}
+.modal.aberto{
+    opacity: 1;
+    visibility: visible;
+}
+
