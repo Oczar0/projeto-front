@@ -5,7 +5,7 @@ const botaoFecharModal = document.querySelector(".fechar-modal"); //selecionando
 const video = document.getElementById("video"); //buscando o elemento pelo ID
 const linkDoVideo = video.src;
 
-function aternarModal() {
+function alternarModal() {
   modal.classList.toggle("aberto");
 }
 /* criamos a função acima pois não é aconselhavel repetir linhas, então fazemos a função para ser chamada quando precisamos. */
